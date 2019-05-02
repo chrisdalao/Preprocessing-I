@@ -4,56 +4,450 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
+
+
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin        : 0;
+	padding       : 0;
+	border        : 0;
+	font-size     : 100%;
+	font          : inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
+	border-spacing : 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family   : @main-font-family-medium;
+	letter-spacing: 1px;
+	margin-bottom : 15px;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	height     : 100%;
+	font-family: @h3-font-family;
 }
 
+
+// VARIABLES \/\/\/\/\/\/
+
+@main-color         : rgb(2, 3, 35);
+@main-inverse-color : rgb(255, 255, 255);
+@main-div-color     : rgb(233, 236, 239);
+@main-font-family-light : 'Oswald Light',
+sans-serif;
+@main-font-family-medium: 'Oswald Medium', sans-serif;
+@h3-font-family         : 'Raleway',
+sans-serif;
+@main-border-radius  : 4px;
+@uppercase-font      : uppercase;
+@letterspace-sm      : 0.5em;
+@letterspace-mid     : 1.0em;
+@letterspace-hi      : 2em;
+@font-size-mid       : 1.0rem;
+@font-size-large     : 1.3rem;
+@font-size-xlarge    : 2.5rem;
+@main-div-lineheight : 23px;
+@pad-marg-px         : 10px;
+
+
+//Flexbox Variables
+
+@flex-display  : flex;
+@justify-evenly: space-evenly;
+
+//VARIABLES /\/\/\/\/\/\/\
+
+//CLASSES \/\/\/\/\/
+
+.parent-div-style {
+	display        : @flex-display;
+	justify-content: space-between;
+	flex-flow      : row;
+	flex-wrap      : wrap;
+	padding        : 15px;
+	border-radius  : @main-border-radius;
+	margin-bottom  : @pad-marg-px;
+	width          : 98%;
+	.div-shadow();
+}
+
+.h2-style {
+	font-size     : @font-size-mid;
+	font-family   : @main-font-family-light;
+	text-transform: @uppercase-font;
+	letter-spacing: @letterspace-sm;
+	border-bottom : 3px solid @main-color;
+}
+
+.job-style {
+	width         : 49%;
+	border-bottom : 2px solid @main-color;
+	margin-bottom : @pad-marg-px;
+	padding-bottom: @pad-marg-px;
+
+	h3:nth-child(1) {
+		text-transform: @uppercase-font;
+		margin-bottom : 0px;
+	}
+
+	h3:nth-child(2) {
+		margin-bottom: 0px;
+		font-weight  : lighter;
+	}
+
+	h3:nth-child(3) {
+		margin-bottom: 5px;
+		font-weight  : lighter;
+	}
+
+
+
+}
+
+.list-style {
+	list-style-type: disc;
+	width          : 90%;
+	margin         : auto;
+	line-height    : 22px;
+	font-size      : 0.85rem;
+}
+
+.div-shadow {
+	box-shadow   : 5px 5px 5px rgb(19, 18, 18);
+	border-radius: 4px;
+}
+
+//CLASSES /\/\/\/\/\
+
+.container {
+	max-width    : 845px;
+	margin       : auto;
+	padding      : 2px 45px 45px 45px;
+	border       : 3px solid @main-color;
+	border-radius: @main-border-radius;
+}
+
+header {
+	display  : @flex-display;
+	max-width: 845px;
+	margin   : auto;
+	width    : 100%;
+
+	nav {
+		display        : @flex-display;
+		margin-bottom  : 2px;
+		justify-content: @justify-evenly;
+
+		a {
+			color           : @main-inverse-color;
+			font-size       : 15px;
+			text-decoration : none;
+			background-color: @main-color;
+			padding         : 7px 1px;
+			text-transform  : @uppercase-font;
+			border-radius   : @main-border-radius;
+			letter-spacing  : 0.35em;
+
+			&:hover {
+				background-color: @main-inverse-color;
+				color           : @main-color;
+			}
+		}
+
+	}
+}
+
+
+
+.personal {
+	.parent-div-style();
+
+	&-content {
+		display         : @flex-display;
+		background-color: @main-color;
+		color           : @main-inverse-color;
+		border-radius   : @main-border-radius;
+		width           : 49%;
+		height          : 250px;
+		flex-flow       : column;
+
+		div:nth-child(1) {
+			letter-spacing: @letterspace-sm;
+			padding       : 60px 0px @pad-marg-px 30px;
+			font-size     : @font-size-xlarge;
+			text-transform: @uppercase-font;
+			border-bottom : 1px solid #ffffff;
+			font-family   : @main-font-family-light;
+
+		}
+
+		div:nth-child(2) {
+			letter-spacing: @letterspace-sm;
+			text-transform: @uppercase-font;
+			font-size     : @font-size-large;
+			padding       : @pad-marg-px 30px @pad-marg-px 30px;
+		}
+
+	}
+
+	&-contact {
+		letter-spacing: 0.4rem;
+		display       : @flex-display;
+		align-items   : center;
+		width         : 49%;
+		line-height   : 40px;
+
+		h2 {
+			font-size     : @font-size-large;
+			text-transform: @uppercase-font;
+			letter-spacing: @letterspace-mid;
+			border-bottom : 3px solid @main-color;
+			padding-bottom: @pad-marg-px;
+		}
+
+	}
+
+	&-profile {
+		padding-top: 25px;
+		width      : 98%;
+
+		h2 {
+			.h2-style();
+		}
+
+		p {
+			line-height: @main-div-lineheight;
+		}
+
+	}
+
+}
+
+.experience {
+	.parent-div-style();
+
+	.experience-title {
+		width: 98%;
+	}
+
+	h2 {
+		.h2-style();
+	}
+
+	.experience-job {
+		.job-style();
+	}
+
+	.experience-job:nth-child(6) {
+		width: 98%;
+	}
+
+	ul {
+		.list-style();
+	}
+
+}
+
+.skills {
+	.parent-div-style();
+
+	padding-top: 25px;
+	border     : 0;
+
+	h2 {
+		.h2-style();
+	}
+
+	ul {
+		display        : @flex-display;
+		flex-wrap      : wrap;
+		justify-content: @justify-evenly;
+		.list-style();
+	}
+
+	li {
+		padding: 6px;
+	}
+
+}
+
+
+
+footer {
+	font-size : 10px;
+	text-align: center;
+}
+
+//MEDIA QUERY
+
+@media(max-width: 500px) {
+
+
+	.container {
+		width  : 100%;
+		padding: 0px 20px;
+
+	}
+
+	.personal {
+		flex-flow: column;
+
+		div:nth-child(1), div:nth-child(2), div:nth-child(3) {
+			width: 100%;
+		}
+
+	}
+
+	.experience {
+
+		flex-flow: column;
+
+		&-job:nth-child(2), &-job:nth-child(3), &-job:nth-child(4), &-job:nth-child(5), &-job:nth-child(6) {
+			width: 100%;
+		}
+
+	}
+
+	.skills{
+
+		ul{
+			letter-spacing: 0.3rem;
+		}
+
+	}
+
+
+
+}
