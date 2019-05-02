@@ -385,15 +385,14 @@ header {
 
 	padding-top: 25px;
 	border     : 0;
-	// .job-style();
 
 	h2 {
 		.h2-style();
 	}
 
 	ul {
-		display: @flex-display;
-		flex-wrap: wrap;
+		display        : @flex-display;
+		flex-wrap      : wrap;
 		justify-content: @justify-evenly;
 		.list-style();
 	}
@@ -409,4 +408,46 @@ header {
 footer {
 	font-size : 10px;
 	text-align: center;
+}
+
+//MEDIA QUERY
+
+@media(max-width: 500px) {
+
+
+	.container {
+		width  : 100%;
+		padding: 0px 20px;
+
+	}
+
+	.personal {
+		flex-flow: column;
+
+		div:nth-child(1), div:nth-child(2), div:nth-child(3) {
+			width: 100%;
+		}
+
+	}
+
+	.experience {
+
+		flex-flow: column;
+
+		&-job:nth-child(2), &-job:nth-child(3), &-job:nth-child(4), &-job:nth-child(5), &-job:nth-child(6) {
+			width: 100%;
+		}
+
+	}
+
+	.skills{
+
+		ul{
+			letter-spacing: 0.3rem;
+		}
+
+	}
+
+
+
 }
